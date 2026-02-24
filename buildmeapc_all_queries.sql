@@ -354,13 +354,7 @@ DELETE FROM parts WHERE id = $1
 -- Purpose: Display top 3 featured showcase builds on the homepage hero section
 -- Sorted by rating and likes to show best builds first
 SELECT 
-  b.id,
-  b.title,
-  b.total_price,
-  b.rating_avg,
-  b.rating_count,
-  b.like_count,
-  b.specs_summary,
+  b.*
   u.display_name as creator_display_name
 FROM builds b
 JOIN users u ON b.creator_id = u.id
@@ -372,14 +366,7 @@ LIMIT 3;
 -- Query 12: Get all showcase builds (Showcase Page)
 -- Purpose: Browse all showcase builds with client-side availability filtering
 SELECT 
-  b.id,
-  b.title,
-  b.total_price,
-  b.rating_avg,
-  b.rating_count,
-  b.like_count,
-  b.specs_summary,
-  b.availability_status,
+  b.*
   u.display_name as creator_display_name
 FROM builds b
 JOIN users u ON b.creator_id = u.id
@@ -390,14 +377,7 @@ ORDER BY b.created_at DESC;
 -- Query 13: Get user's published builds (Profile Page)
 -- Purpose: Show user's published builds on their profile page, mostly to show to other people.
 SELECT 
-  b.id,
-  b.title,
-  b.total_price,
-  b.purpose,
-  b.rating_avg,
-  b.rating_count,
-  b.like_count,
-  b.build_type
+  b.*
 FROM builds b
 WHERE b.creator_id = $1
   AND b.status = 'published'
@@ -406,15 +386,7 @@ ORDER BY b.created_at DESC;
 -- Query 14: Get my builds (User's Dashboard)
 -- Purpose: User views their own builds including drafts this is used in the my builds page
 SELECT 
-  b.id,
-  b.title,
-  b.total_price,
-  b.purpose,
-  b.status,
-  b.build_type,
-  b.created_at,
-  b.rating_avg,
-  b.like_count
+  b.*
 FROM builds b
 WHERE b.creator_id = $1
 ORDER BY b.created_at DESC;
@@ -422,14 +394,7 @@ ORDER BY b.created_at DESC;
 -- Query 15: Get builder's showcase builds (Builder Dashboard)
 -- Purpose: Builder  see/manage their showcase builds
 SELECT 
-  b.id,
-  b.title,
-  b.total_price,
-  b.availability_status,
-  b.rating_avg,
-  b.rating_count,
-  b.like_count,
-  b.created_at
+  b.*
 FROM builds b
 WHERE b.creator_id = $1
   AND b.build_type = 'showcase'
