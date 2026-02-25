@@ -231,15 +231,15 @@ INSERT INTO likes (user_id, build_id) VALUES
 
 -- ─── Build Requests ────────────────────────────────────────────────
 
-INSERT INTO build_requests (id, build_id, user_id, budget, purpose, notes, preferred_builder_id, status) VALUES
-  ('g0000000-0000-0000-0000-000000000001', 'e0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 1700.00, 'Gaming', 'Looking for someone to build this for me. Need RGB lighting.', 'a0000000-0000-0000-0000-000000000004', 'open'),
-  ('g0000000-0000-0000-0000-000000000002', 'e0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000002', 2600.00, 'Content Creation', 'Need this built urgently for video editing work.', NULL, 'open');
+INSERT INTO build_requests (build_id, user_id, budget, purpose, notes, preferred_builder_id, status) VALUES
+  ('e0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 1700.00, 'Gaming', 'Looking for someone to build this for me. Need RGB lighting.', 'a0000000-0000-0000-0000-000000000004', 'open'),
+  ('e0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000002', 2600.00, 'Content Creation', 'Need this built urgently for video editing work.', NULL, 'open');
 
 -- ─── Showcase Inquiries ────────────────────────────────────────────
 
-INSERT INTO showcase_inquiries (id, user_id, build_id, builder_id, message, status) VALUES
-  ('h0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000002', 'e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'Is this build still available? Can I get it with 32GB RAM instead?', 'pending'),
-  ('h0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000003', 'e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'What is the warranty on this build?', 'accepted');
+INSERT INTO showcase_inquiries (user_id, build_id, builder_id, message, status) VALUES
+  ('a0000000-0000-0000-0000-000000000002', 'e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'Is this build still available? Can I get it with 32GB RAM instead?', 'pending'),
+  ('a0000000-0000-0000-0000-000000000003', 'e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'What is the warranty on this build?', 'accepted');
 
 -- ─── Compatibility Rules ─────────────────────────────────────────
 
