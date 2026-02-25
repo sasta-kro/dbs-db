@@ -1,11 +1,11 @@
 -- ─── Users ────────────────────────────────────────────────────────
 
 INSERT INTO users (id, email, password_hash, display_name, avatar_url, bio, role, is_banned) VALUES
-  ('a0000000-0000-0000-0000-000000000001', 'admin@buildboard.com', '$2b$10$placeholder_admin_hash_will_be_set_by_seed_script__', 'Admin', NULL, 'Platform administrator', 'admin', false),
-  ('a0000000-0000-0000-0000-000000000002', 'alice@example.com', '$2b$10$placeholder_user1_hash_will_be_set_by_seed_script__', 'Alice Chen', NULL, 'PC enthusiast and gamer', 'user', false),
-  ('a0000000-0000-0000-0000-000000000003', 'bob@example.com', '$2b$10$placeholder_user2_hash_will_be_set_by_seed_script__', 'Bob Martinez', NULL, 'Content creator looking for the perfect workstation', 'user', false),
-  ('a0000000-0000-0000-0000-000000000004', 'techpro@example.com', '$2b$10$placeholder_build1_hash_will_be_set_by_seed_script', 'TechPro Builds', NULL, 'Professional PC builder with 10+ years experience', 'builder', false),
-  ('a0000000-0000-0000-0000-000000000005', 'elite@example.com', '$2b$10$placeholder_build2_hash_will_be_set_by_seed_script', 'ElitePC Workshop', NULL, 'Custom gaming and workstation builds', 'builder', false);
+  ('a0000000-0000-0000-0000-000000000001', 'admin@buildboard.com', '$2b$10$placeholder_admin_hash_will_be_set_by_seed_script__', 'Admin', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop', 'Platform administrator', 'admin', false),
+  ('a0000000-0000-0000-0000-000000000002', 'alice@example.com', '$2b$10$placeholder_user1_hash_will_be_set_by_seed_script__', 'Alice Chen', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop', 'PC enthusiast and gamer', 'user', false),
+  ('a0000000-0000-0000-0000-000000000003', 'bob@example.com', '$2b$10$placeholder_user2_hash_will_be_set_by_seed_script__', 'Bob Martinez', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop', 'Content creator looking for the perfect workstation', 'user', false),
+  ('a0000000-0000-0000-0000-000000000004', 'techpro@example.com', '$2b$10$placeholder_build1_hash_will_be_set_by_seed_script', 'TechPro Builds', 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop', 'Professional PC builder with 10+ years experience', 'builder', false),
+  ('a0000000-0000-0000-0000-000000000005', 'elite@example.com', '$2b$10$placeholder_build2_hash_will_be_set_by_seed_script', 'ElitePC Workshop', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop', 'Custom gaming and workstation builds', 'builder', false);
 
 -- ─── Builder Profiles ────────────────────────────────────────────
 
@@ -28,140 +28,140 @@ INSERT INTO part_categories (id, category_name, description, icon) VALUES
 -- ─── Parts ───────────────────────────────────────────────────────
 
 -- CPU (5)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 'AMD Ryzen 7 7700X', 'AMD', 'Ryzen 7 7700X',
    '{"socket":"AM5","cores":8,"threads":16,"base_clock_ghz":4.5,"boost_clock_ghz":5.4,"tdp_watts":105,"integrated_graphics":true}',
-   299.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   299.99, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000002', 'c0000000-0000-0000-0000-000000000001', 'AMD Ryzen 5 7600X', 'AMD', 'Ryzen 5 7600X',
    '{"socket":"AM5","cores":6,"threads":12,"base_clock_ghz":4.7,"boost_clock_ghz":5.3,"tdp_watts":105,"integrated_graphics":true}',
-   199.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   199.99, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000001', 'Intel Core i7-13700K', 'Intel', 'Core i7-13700K',
    '{"socket":"LGA1700","cores":16,"threads":24,"base_clock_ghz":3.4,"boost_clock_ghz":5.4,"tdp_watts":125,"integrated_graphics":true}',
-   349.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   349.99, 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000004', 'c0000000-0000-0000-0000-000000000001', 'Intel Core i5-13600K', 'Intel', 'Core i5-13600K',
    '{"socket":"LGA1700","cores":14,"threads":20,"base_clock_ghz":3.5,"boost_clock_ghz":5.1,"tdp_watts":125,"integrated_graphics":true}',
-   264.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   264.99, 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000005', 'c0000000-0000-0000-0000-000000000001', 'AMD Ryzen 9 7950X', 'AMD', 'Ryzen 9 7950X',
    '{"socket":"AM5","cores":16,"threads":32,"base_clock_ghz":4.5,"boost_clock_ghz":5.7,"tdp_watts":170,"integrated_graphics":true}',
-   549.99, true, 'a0000000-0000-0000-0000-000000000001');
+   549.99, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- GPU (5)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000006', 'c0000000-0000-0000-0000-000000000002', 'NVIDIA GeForce RTX 4070', 'NVIDIA', 'RTX 4070',
    '{"interface":"PCIe 4.0 x16","vram_gb":12,"vram_type":"GDDR6X","length_mm":244,"tdp_watts":200,"recommended_psu_watts":650,"slots_occupied":2.5}',
-   549.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   549.99, 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000007', 'c0000000-0000-0000-0000-000000000002', 'NVIDIA GeForce RTX 4080', 'NVIDIA', 'RTX 4080',
    '{"interface":"PCIe 4.0 x16","vram_gb":16,"vram_type":"GDDR6X","length_mm":304,"tdp_watts":320,"recommended_psu_watts":750,"slots_occupied":3}',
-   1099.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   1099.99, 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000008', 'c0000000-0000-0000-0000-000000000002', 'AMD Radeon RX 7900 XTX', 'AMD', 'RX 7900 XTX',
    '{"interface":"PCIe 4.0 x16","vram_gb":24,"vram_type":"GDDR6","length_mm":287,"tdp_watts":355,"recommended_psu_watts":800,"slots_occupied":2.5}',
-   899.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   899.99, 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000009', 'c0000000-0000-0000-0000-000000000002', 'NVIDIA GeForce RTX 4060', 'NVIDIA', 'RTX 4060',
    '{"interface":"PCIe 4.0 x16","vram_gb":8,"vram_type":"GDDR6","length_mm":240,"tdp_watts":115,"recommended_psu_watts":550,"slots_occupied":2}',
-   299.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   299.99, 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000010', 'c0000000-0000-0000-0000-000000000002', 'AMD Radeon RX 7800 XT', 'AMD', 'RX 7800 XT',
    '{"interface":"PCIe 4.0 x16","vram_gb":16,"vram_type":"GDDR6","length_mm":267,"tdp_watts":263,"recommended_psu_watts":700,"slots_occupied":2.5}',
-   449.99, true, 'a0000000-0000-0000-0000-000000000001');
+   449.99, 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- Motherboard (5)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000011', 'c0000000-0000-0000-0000-000000000003', 'MSI MAG B650 TOMAHAWK WiFi', 'MSI', 'MAG B650 TOMAHAWK WiFi',
    '{"socket":"AM5","form_factor":"ATX","chipset":"B650","ram_type":"DDR5","ram_slots":4,"max_ram_gb":128,"m2_slots":2,"pcie_x16_slots":1}',
-   219.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   219.99, 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000012', 'c0000000-0000-0000-0000-000000000003', 'Gigabyte X670E AORUS Master', 'Gigabyte', 'X670E AORUS Master',
    '{"socket":"AM5","form_factor":"ATX","chipset":"X670E","ram_type":"DDR5","ram_slots":4,"max_ram_gb":128,"m2_slots":4,"pcie_x16_slots":2}',
-   399.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   399.99, 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000013', 'c0000000-0000-0000-0000-000000000003', 'ASUS ROG Strix Z790-E', 'ASUS', 'ROG Strix Z790-E',
    '{"socket":"LGA1700","form_factor":"ATX","chipset":"Z790","ram_type":"DDR5","ram_slots":4,"max_ram_gb":128,"m2_slots":5,"pcie_x16_slots":2}',
-   379.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   379.99, 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000014', 'c0000000-0000-0000-0000-000000000003', 'MSI MAG B660M Mortar WiFi', 'MSI', 'MAG B660M Mortar WiFi',
    '{"socket":"LGA1700","form_factor":"mATX","chipset":"B660","ram_type":"DDR5","ram_slots":2,"max_ram_gb":64,"m2_slots":2,"pcie_x16_slots":1}',
-   159.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   159.99, 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000015', 'c0000000-0000-0000-0000-000000000003', 'ASUS ROG Strix B650E-I', 'ASUS', 'ROG Strix B650E-I',
    '{"socket":"AM5","form_factor":"ITX","chipset":"B650E","ram_type":"DDR5","ram_slots":2,"max_ram_gb":64,"m2_slots":2,"pcie_x16_slots":1}',
-   299.99, true, 'a0000000-0000-0000-0000-000000000001');
+   299.99, 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- RAM (4)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000016', 'c0000000-0000-0000-0000-000000000004', 'Corsair Vengeance DDR5-6000 32GB', 'Corsair', 'Vengeance DDR5-6000 32GB (2x16GB)',
    '{"type":"DDR5","speed_mhz":6000,"capacity_gb":16,"modules":2,"total_capacity_gb":32,"cas_latency":30}',
-   109.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   109.99, 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000017', 'c0000000-0000-0000-0000-000000000004', 'G.Skill Trident Z5 DDR5-6400 32GB', 'G.Skill', 'Trident Z5 DDR5-6400 32GB (2x16GB)',
    '{"type":"DDR5","speed_mhz":6400,"capacity_gb":16,"modules":2,"total_capacity_gb":32,"cas_latency":32}',
-   134.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   134.99, 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000018', 'c0000000-0000-0000-0000-000000000004', 'Corsair Vengeance DDR5-5600 64GB', 'Corsair', 'Vengeance DDR5-5600 64GB (2x32GB)',
    '{"type":"DDR5","speed_mhz":5600,"capacity_gb":32,"modules":2,"total_capacity_gb":64,"cas_latency":36}',
-   189.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   189.99, 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000019', 'c0000000-0000-0000-0000-000000000004', 'Kingston Fury Beast DDR5-5200 16GB', 'Kingston', 'Fury Beast DDR5-5200 16GB (2x8GB)',
    '{"type":"DDR5","speed_mhz":5200,"capacity_gb":8,"modules":2,"total_capacity_gb":16,"cas_latency":40}',
-   54.99, true, 'a0000000-0000-0000-0000-000000000001');
+   54.99, 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- Storage (4)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000020', 'c0000000-0000-0000-0000-000000000005', 'Samsung 990 Pro 1TB', 'Samsung', '990 Pro 1TB',
    '{"type":"NVMe","interface":"M.2","capacity_gb":1000,"read_speed_mbps":7450,"write_speed_mbps":6900,"form_factor":"M.2 2280"}',
-   109.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   109.99, 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000021', 'c0000000-0000-0000-0000-000000000005', 'WD Black SN850X 2TB', 'Western Digital', 'SN850X 2TB',
    '{"type":"NVMe","interface":"M.2","capacity_gb":2000,"read_speed_mbps":7300,"write_speed_mbps":6600,"form_factor":"M.2 2280"}',
-   159.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   159.99, 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000022', 'c0000000-0000-0000-0000-000000000005', 'Crucial P3 Plus 1TB', 'Crucial', 'P3 Plus 1TB',
    '{"type":"NVMe","interface":"M.2","capacity_gb":1000,"read_speed_mbps":5000,"write_speed_mbps":4200,"form_factor":"M.2 2280"}',
-   59.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   59.99, 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000023', 'c0000000-0000-0000-0000-000000000005', 'Samsung 870 EVO 1TB SATA', 'Samsung', '870 EVO 1TB',
    '{"type":"SATA","interface":"2.5\"","capacity_gb":1000,"read_speed_mbps":560,"write_speed_mbps":530,"form_factor":"2.5\""}',
-   79.99, true, 'a0000000-0000-0000-0000-000000000001');
+   79.99, 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- PSU (4)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000024', 'c0000000-0000-0000-0000-000000000006', 'Corsair RM850x', 'Corsair', 'RM850x',
    '{"wattage":850,"efficiency_rating":"80+ Gold","modular":"Full","form_factor":"ATX"}',
-   139.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   139.99, 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000025', 'c0000000-0000-0000-0000-000000000006', 'EVGA SuperNOVA 1000 G7', 'EVGA', 'SuperNOVA 1000 G7',
    '{"wattage":1000,"efficiency_rating":"80+ Gold","modular":"Full","form_factor":"ATX"}',
-   179.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   179.99, 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000026', 'c0000000-0000-0000-0000-000000000006', 'Seasonic Focus GX-750', 'Seasonic', 'Focus GX-750',
    '{"wattage":750,"efficiency_rating":"80+ Gold","modular":"Full","form_factor":"ATX"}',
-   109.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   109.99, 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000027', 'c0000000-0000-0000-0000-000000000006', 'Corsair SF750 Platinum', 'Corsair', 'SF750 Platinum',
    '{"wattage":750,"efficiency_rating":"80+ Platinum","modular":"Full","form_factor":"SFX"}',
-   159.99, true, 'a0000000-0000-0000-0000-000000000001');
+   159.99, 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- Case (4)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000028', 'c0000000-0000-0000-0000-000000000007', 'Corsair 4000D Airflow', 'Corsair', '4000D Airflow',
    '{"form_factor":"ATX","supported_motherboards":["ATX","mATX","ITX"],"max_gpu_length_mm":360,"max_cooler_height_mm":170,"max_psu_length_mm":180,"drive_bays_3_5":2,"drive_bays_2_5":2,"included_fans":2,"radiator_support":["120mm","240mm","280mm","360mm"]}',
-   104.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   104.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000029', 'c0000000-0000-0000-0000-000000000007', 'Cooler Master NR200P', 'Cooler Master', 'NR200P',
    '{"form_factor":"ITX","supported_motherboards":["ITX"],"max_gpu_length_mm":330,"max_cooler_height_mm":155,"max_psu_length_mm":130,"drive_bays_3_5":1,"drive_bays_2_5":3,"included_fans":2,"radiator_support":["120mm","240mm","280mm"]}',
-   99.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   99.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000030', 'c0000000-0000-0000-0000-000000000007', 'NZXT H7 Flow', 'NZXT', 'H7 Flow',
    '{"form_factor":"ATX","supported_motherboards":["ATX","mATX","ITX"],"max_gpu_length_mm":400,"max_cooler_height_mm":185,"max_psu_length_mm":200,"drive_bays_3_5":2,"drive_bays_2_5":2,"included_fans":2,"radiator_support":["120mm","240mm","280mm","360mm"]}',
-   129.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   129.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000031', 'c0000000-0000-0000-0000-000000000007', 'Lian Li Lancool III', 'Lian Li', 'Lancool III',
    '{"form_factor":"ATX","supported_motherboards":["ATX","mATX","ITX"],"max_gpu_length_mm":420,"max_cooler_height_mm":187,"max_psu_length_mm":210,"drive_bays_3_5":4,"drive_bays_2_5":6,"included_fans":3,"radiator_support":["120mm","240mm","280mm","360mm"]}',
-   149.99, true, 'a0000000-0000-0000-0000-000000000001');
+   149.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- Cooling (4)
-INSERT INTO parts (id, category_id, name, brand, model, specifications, price, is_active, created_by) VALUES
+INSERT INTO parts (id, category_id, name, brand, model, specifications, price, image_url, is_active, created_by) VALUES
   ('d0000000-0000-0000-0000-000000000032', 'c0000000-0000-0000-0000-000000000008', 'DeepCool AK620', 'DeepCool', 'AK620',
    '{"type":"Air","socket_compatibility":["AM5","AM4","LGA1700","LGA1200"],"radiator_size_mm":null,"height_mm":160,"fan_count":2,"tdp_rating_watts":260}',
-   64.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   64.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000033', 'c0000000-0000-0000-0000-000000000008', 'Noctua NH-D15', 'Noctua', 'NH-D15',
    '{"type":"Air","socket_compatibility":["AM5","AM4","LGA1700","LGA1200"],"radiator_size_mm":null,"height_mm":165,"fan_count":2,"tdp_rating_watts":250}',
-   109.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   109.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000034', 'c0000000-0000-0000-0000-000000000008', 'NZXT Kraken X63', 'NZXT', 'Kraken X63',
    '{"type":"AIO","socket_compatibility":["AM5","AM4","LGA1700","LGA1200"],"radiator_size_mm":280,"height_mm":null,"fan_count":2,"tdp_rating_watts":300}',
-   149.99, true, 'a0000000-0000-0000-0000-000000000001'),
+   149.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001'),
   ('d0000000-0000-0000-0000-000000000035', 'c0000000-0000-0000-0000-000000000008', 'Arctic Liquid Freezer II 360', 'Arctic', 'Liquid Freezer II 360',
    '{"type":"AIO","socket_compatibility":["AM5","AM4","LGA1700","LGA1200"],"radiator_size_mm":360,"height_mm":null,"fan_count":3,"tdp_rating_watts":350}',
-   119.99, true, 'a0000000-0000-0000-0000-000000000001');
+   119.99, 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=300&h=300&fit=crop', true, 'a0000000-0000-0000-0000-000000000001');
 
 -- ─── Builds ──────────────────────────────────────────────────────
 
 INSERT INTO builds (id, creator_id, title, description, purpose, total_price, status, build_type, availability_status, image_urls, specs_summary, like_count, rating_avg, rating_count) VALUES
-  ('e0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000002', 'Ultimate Gaming Rig', 'High-end gaming build for 1440p gaming at max settings', 'Gaming', 1649.93, 'published', 'personal', NULL, '{}', NULL, 3, 4.50, 2),
-  ('e0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000003', 'Content Creator Workstation', 'Powerful workstation for video editing and 3D rendering', 'Content Creation', 2519.93, 'published', 'personal', NULL, '{}', NULL, 1, 5.00, 1),
-  ('e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'ProGamer Elite Build', 'Pre-built high-performance gaming PC ready to ship. Professionally assembled with cable management and stress testing included.', 'Gaming', 1899.93, 'published', 'showcase', 'available', '{}', 'Ryzen 9 7950X / RTX 4080 / 64GB DDR5 / 2TB NVMe', 5, 4.80, 3);
+  ('e0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000002', 'Ultimate Gaming Rig', 'High-end gaming build for 1440p gaming at max settings', 'Gaming', 1649.93, 'published', 'personal', NULL, '{"https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop"}', NULL, 3, 4.50, 2),
+  ('e0000000-0000-0000-0000-000000000002', 'a0000000-0000-0000-0000-000000000003', 'Content Creator Workstation', 'Powerful workstation for video editing and 3D rendering', 'Content Creation', 2519.93, 'published', 'personal', NULL, '{"https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&h=400&fit=crop"}', NULL, 1, 5.00, 1),
+  ('e0000000-0000-0000-0000-000000000003', 'a0000000-0000-0000-0000-000000000004', 'ProGamer Elite Build', 'Pre-built high-performance gaming PC ready to ship. Professionally assembled with cable management and stress testing included.', 'Gaming', 1899.93, 'published', 'showcase', 'available', '{"https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&h=400&fit=crop", "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop"}', 'Ryzen 9 7950X / RTX 4080 / 64GB DDR5 / 2TB NVMe', 5, 4.80, 3);
 
 -- ─── Build Parts ─────────────────────────────────────────────────
 
