@@ -241,6 +241,41 @@ router.put('/:id', authenticate, async (req, res, next) => {
 });
 
 
+router.patch('/:id', authenticate, async (req, res, next) => {
+  try {
+    const { rows: existing } = await pool.query('SELECT * FROM builds WHERE id = $1', [req.params.id]);
+    if (existing.length === 0) return res.status(404).json({ error: 'Build not found' });
+    if (existing[0].creator_id !== req.user.id && req.user.role !== 'admin') {
+      return res.status(403).json({ error: 'Not authorized' });
+    }
+
+    const allowedFields = ['title', 'description', 'purpose', 'total_price', 'status', 'build_type', 'availability_status', 'image_urls', 'specs_summary'];
+    const updates = [];
+    const values = [];
+    for (const field of allowedFields) {
+      if (req.body[field] !== undefined) {
+        values.push(req.body[field]);
+        updates.push(`${field} = $${values.length}`);
+      }
+    }
+
+    if (updates.length === 0) {
+      return res.status(400).json({ error: 'No valid fields to update' });
+    }
+
+    values.push(req.params.id);
+    const { rows } = await pool.query(
+      `UPDATE builds SET ${updates.join(', ')} WHERE id = $${values.length} RETURNING *`,
+      values
+    );
+
+    res.json({ build: rows[0] });
+  } catch (err) {
+    next(err);
+  }
+});
+
+
 router.delete('/:id', authenticate, async (req, res, next) => {
   try {
     const { rows } = await pool.query('SELECT creator_id FROM builds WHERE id = $1', [req.params.id]);
