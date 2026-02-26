@@ -772,6 +772,9 @@ RETURNING *;
 -- Purpose: Admin can delete compatibility rules
 DELETE FROM compatibility_rules WHERE id = $1;
 
+-- Query 64: Update Showcase Inquiry Status
+-- Purpose: Builders can either accept or decline the showcase inquires made by users
+UPDATE showcase_inquiries SET status = $1 WHERE id = $2
 
 -- ------------------------------------------------------------------------------------------
 -- STATS QUERY
